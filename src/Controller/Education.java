@@ -9,6 +9,7 @@ import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 
 
@@ -21,9 +22,6 @@ public class Education extends HttpServlet {
        
     public Education() {}
 
-	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
-	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		String college = request.getParameter("college");
@@ -32,17 +30,11 @@ public class Education extends HttpServlet {
 		System.out.println("name from page " + college);
 		System.out.println("fathername from page " + degree);
 		System.out.println("fathername from page " + year);
-		Cookie ccollege = new Cookie("ccollege", college);
-		Cookie cdegree = new Cookie("cdegree", degree);
-		Cookie cyear = new Cookie("cyear", year);
-		response.addCookie(ccollege);
-		response.addCookie(cdegree);
-		response.addCookie(cyear);
+		HttpSession session = request.getSession();
+		session.setAttribute(college, college);
+		session.setAttribute(degree, degree);
+		session.setAttribute(year, year);
 		response.sendRedirect("review.jsp");
-		//RequestDispatcher rd1=null;
-		//rd1=request.getRequestDispatcher("review.jsp");
-		//rd1.include(request, response);
-		
 	}
 
 	/**

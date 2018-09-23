@@ -6,13 +6,9 @@
 <title>Insert title here</title>
 </head>
 <body>
-
 Hello user,
 <br/>
-
 <br/>
 <a href="register1.jsp">Start your Registration </a>
-
-
 </body>
 </html>

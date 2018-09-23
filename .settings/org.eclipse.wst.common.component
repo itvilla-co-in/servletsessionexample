@@ -2,7 +2,7 @@
     <wb-module deploy-name="A_S_2_Cookie_Demo">
         <wb-resource deploy-path="/" source-path="/WebContent" tag="defaultRootSource"/>
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src"/>
-        <property name="context-root" value="A_S_2_Cookie_Demo"/>
         <property name="java-output-path" value="/A_S_2_Cookie_Demo/build/classes"/>
+        <property name="context-root" value="A_S_2_Session_Demo"/>
     </wb-module>
 </project-modules>

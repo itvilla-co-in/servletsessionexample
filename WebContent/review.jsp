@@ -7,38 +7,11 @@
 </head>
 <body>
 <%
-String dname = "";
-String dfathername = "";
-String dcollege = "";
-String ddegree = "";
-String dyear = "";
-
-Cookie[] cookieLocations = request.getCookies(); 
-
-if(cookieLocations !=null){
-	for(Cookie temp : cookieLocations){
-		if(temp.getName().equals("name")){			
-			dname = temp.getValue();
-		}
-		
-		if(temp.getName().equals("fathername")){			
-			dfathername = temp.getValue();
-		}
-		
-		if(temp.getName().equals("ccollege")){			
-			dcollege = temp.getValue();
-		}
-		
-		if(temp.getName().equals("cdegree")){			
-			ddegree = temp.getValue();
-		}
-		
-		if(temp.getName().equals("cyear")){			
-			dyear = temp.getValue();
-		}
-		
-	}
-}
+String dname = (String) session.getAttribute("name");
+String dfathername = (String) session.getAttribute("fathername");
+String dcollege = (String) session.getAttribute("college");
+String ddegree = (String) session.getAttribute("degree");
+String dyear = (String) session.getAttribute("year");
 %>
 
 
